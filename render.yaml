@@ -1,0 +1,21 @@
+# =============================
+# 1. render.yaml
+# =============================
+services:
+  - type: web
+    name: plausible
+    env: docker
+    plan: starter
+    repo: https://github.com/sophisticated21/qrbus-analytics  # <- senin GitHub adresin olacak
+    branch: main
+    rootDir: .
+    healthCheckPath: /
+    envVars:
+      - key: BASE_URL
+        value: https://plausible-analytics.onrender.com  # <- Render URL
+      - key: SECRET_KEY_BASE
+        generateValue: true
+
+
+
+
